@@ -18,8 +18,8 @@ for ((i = 0; i < $1; i++)); do
     if [[ $4 = "-t" ]]; then
         sudo mkdir -p ${DIR}/$i
         DIR="${DIR}/$i"
-        sudo chmod a+w ${DIR}
     fi
+    sudo chmod a+w ${DIR}
     time ( _helper $i $2 $3 ${DIR}) &>> /tmp/stats 
 done
 
