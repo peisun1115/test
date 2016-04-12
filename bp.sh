@@ -15,8 +15,9 @@ DIR="/mnt/ramdisk/alluxioworker"
 export TIMEFORMAT='%3R %3U %3S'
 for ((i = 0; i < $1; i++)); do
     if [[ $4 = "-t" ]]; then
-        mkdir -p ${DIR}/$i
+        sudo mkdir -p ${DIR}/$i
         DIR="${DIR}/$i"
+        sudo chmod a+w ${DIR}
     fi
     time ( _helper $i $2 $3 ${DIR}) &>> /tmp/stats 
 done
