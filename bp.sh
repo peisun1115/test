@@ -12,6 +12,7 @@ _helper() {
 
 >/tmp/stats
 DIR="/mnt/ramdisk/alluxioworker"
+sudo rm -rf ${DIR}/*
 export TIMEFORMAT='%3R %3U %3S'
 for ((i = 0; i < $1; i++)); do
     if [[ $4 = "-t" ]]; then
