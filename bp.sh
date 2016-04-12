@@ -12,6 +12,6 @@ _helper() {
 >/tmp/stats
 for ((i = 0; i < $1; i++)); do
     export TIMEFORMAT='%3R %3U %3S'
-    time ( _helper $i $2 $3 ) &> /tmp/stats 
+    time ( _helper $i $2 $3 ) &>> /tmp/stats 
 done
 
