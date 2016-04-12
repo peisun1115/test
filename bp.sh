@@ -5,7 +5,7 @@
 # $3: prefix
 _helper() {
     for ((j = 0; j < $2; j++)); do
-	    echo "i:$1,j:$j" > /mnt/ramdisk/alluxioworker/f_${3}_${1}_${j}
+	   sudo echo "i:$1,j:$j" > /mnt/ramdisk/alluxioworker/f_${3}_${1}_${j}
     done
 }
 
