@@ -15,6 +15,6 @@ for ((i = 0; i < $1; i++)); do
     if [[ $4 = "-t" ]]; then
         sudo mkdir -p /mnt/ramdisk/alluxioworker/$i
     fi
-    time ( sudo helper $i $2 $3 ) &>> /tmp/stats 
+    time ( sudo _helper $i $2 $3 ) &>> /tmp/stats 
 done
 
