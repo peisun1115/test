@@ -12,7 +12,7 @@ _helper() {
 >/tmp/stats
 for ((i = 0; i < $1; i++)); do
     export TIMEFORMAT='%3R %3U %3S'
-    if [[ -z $4 ]]; then
+    if [[ $4 = "-t"]]; then
         mkdir /mnt/ramdisk/alluxioworker/i
     fi
     time ( _helper $i $2 $3 ) &>> /tmp/stats 
