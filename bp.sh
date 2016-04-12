@@ -12,6 +12,8 @@ _helper() {
 
 >/tmp/stats
 DIR="/mnt/ramdisk/alluxioworker"
+sudo chmod a+w ${DIR}
+sudo chmod a+w /mnt/ramdisk
 sudo rm -rf ${DIR}/*
 export TIMEFORMAT='%3R %3U %3S'
 for ((i = 0; i < $1; i++)); do
