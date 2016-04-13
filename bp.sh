@@ -45,7 +45,7 @@ _alluxio_write() {
         D="${D}/$1"
     fi
 
-    for ((j = 0; j < $2; j++)); do
+    for ((j = 0; j < ${U2}; j++)); do
         "${ALLUXIO_BIN}" "copyFromLocal" "./golden" "${D}/f_${1}_${j}"
     done
 }
