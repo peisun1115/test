@@ -6,10 +6,15 @@
 # $4: dir
 _helper() {
     for ((j = 0; j < $2; j++)); do
-    cp ./golden ${4}/f_${3}_${1}_${j}
+        cp ./golden ${4}/f_${3}_${1}_${j}
     done
 }
 
+_alluxio_write() {
+    for ((j = 0; j < $2; j++)); do
+        ../alluxio/bin/alluxio copyFromLocal ./golden "Alluxio:${4}/f_${3}_${1}_${j}"
+    done
+}
 
 >/tmp/stats
 
