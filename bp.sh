@@ -46,7 +46,7 @@ _alluxio_write() {
     fi
 
     for ((j = 0; j < ${U2}; j++)); do
-        "${ALLUXIO_BIN}" "fs" "copyFromLocal" "./golden" "${D}/f_${1}_${j}"
+        "${ALLUXIO_BIN}" "fs" "copyFromLocal" "./golden" "${D}/f_${1}_${j}" &> /dev/null
     done
 }
 
