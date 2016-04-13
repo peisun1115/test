@@ -54,10 +54,10 @@ _alluxio_write() {
 for ((i = 0; i < ${U1}; i++)); do
     case ${ACTION} in
         "ALLUXIO")
-            time ( _alluxio_write ) &>> ${OUTPUT}
+            time ( _alluxio_write $i ) &>> ${OUTPUT}
             ;;
         "LOCAL")
-            time ( _local_write ) &>> ${OUTPUT}
+            time ( _local_write $i ) &>> ${OUTPUT}
             ;;
         *)
             echo "Unsupported action."
