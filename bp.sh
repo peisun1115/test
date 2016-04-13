@@ -11,6 +11,8 @@
 #
 # OUTPUT: the output filename
 #
+# F: File prefix.
+#
 # -t: Create a new directory for each U2.
 
 ACTION=$1
@@ -18,7 +20,8 @@ DIR=$2
 U1=$3
 U2=$4
 OUTPUT=$5
-T=$6
+F=$6
+T=$7
 
 >"${OUTPUT}"
 
@@ -34,7 +37,7 @@ _local_write() {
     fi
 
     for ((j = 0; j < ${U2}; j++)); do
-        cp ./golden ${D}/f_${1}_${j}
+        cp ./golden ${D}/f_${F}_${1}_${j}
     done
 }
 
@@ -46,7 +49,7 @@ _alluxio_write() {
     fi
 
     for ((j = 0; j < ${U2}; j++)); do
-        "${ALLUXIO_BIN}" "fs" "copyFromLocal" "./golden" "${D}/f_${1}_${j}" &> /dev/null
+        "${ALLUXIO_BIN}" "fs" "copyFromLocal" "./golden" "${D}/f_${F}_${1}_${j}" &> /dev/null
     done
 }
 
