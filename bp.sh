@@ -22,6 +22,6 @@ for ((i = 0; i < $1; i++)); do
         DIR="${DIR}/$i"
     fi
     sudo chmod a+w ${DIR}
-    time ( _helper $i $2 $3 ${DIR}) &>> /tmp/stats 
+    time ( _helper $i $2 $3 ${DIR} ) &>> /tmp/stats 
 done
 
