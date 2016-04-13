@@ -10,6 +10,7 @@ _helper() {
     done
 }
 
+
 >/tmp/stats
 
 DIR=$1
