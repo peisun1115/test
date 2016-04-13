@@ -6,7 +6,7 @@
 # $4: dir
 _helper() {
     for ((j = 0; j < $2; j++)); do
-	   echo "i:j:i:j" > ${4}/f_${3}_${1}_${j}
+    cp ./golden ${4}/f_${3}_${1}_${j}
     done
 }
 
