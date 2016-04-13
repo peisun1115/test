@@ -23,7 +23,7 @@ T=$6
 >"${OUTPUT}"
 
 export TIMEFORMAT='%3R %3U %3S'
-export ALLUXIO_BIN="../alluxio/bin/alluxio "
+export ALLUXIO_BIN="../alluxio/bin/alluxio"
 
 # $1: i
 _local_write() {
