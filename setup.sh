@@ -18,7 +18,3 @@ function setup() {
     sh ~/.vim_runtime/install_awesome_vimrc.sh
 }
 
-#AWS information.
-export AWS_ACCESS_KEY_ID="AKIAIODKM6J4SBQJEQXQ"
-export AWS_SECRET_ACCESS_KEY="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"
-
