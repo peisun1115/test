@@ -23,7 +23,7 @@ T=$6
 >"${OUTPUT}"
 
 export TIMEFORMAT='%3R %3U %3S'
-export ALLUXIO_BIN="../alluxio/bin/alluxio fs "
+export ALLUXIO_BIN="../alluxio/bin/alluxio "
 
 # $1: i
 _local_write() {
@@ -41,12 +41,12 @@ _local_write() {
 _alluxio_write() {
     local D="${DIR}"
     if [[ ${T} = "-t" ]]; then
-        "${ALLUXIO_BIN}" "mkdir" "${DIR}/$1"
+        "${ALLUXIO_BIN}" "fs" "mkdir" "${DIR}/$1"
         D="${D}/$1"
     fi
 
     for ((j = 0; j < ${U2}; j++)); do
-        "${ALLUXIO_BIN}" "copyFromLocal" "./golden" "${D}/f_${1}_${j}"
+        "${ALLUXIO_BIN}" "fs" "copyFromLocal" "./golden" "${D}/f_${1}_${j}"
     done
 }
 
