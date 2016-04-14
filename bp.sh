@@ -32,9 +32,10 @@ F=$7
 T=$8
 
 >"${OUTPUT}"
+>"${TIMING}"
 
 export TIMEFORMAT='%3R %3U %3S'
-export ALLUXIO_BIN="../alluxio/bin/alluxio"
+export ALLUXIO_BIN="~/workspace/alluxio/bin/alluxio"
 
 # $1: i
 _local_write() {
@@ -55,8 +56,7 @@ _alluxio_write() {
         "${ALLUXIO_BIN}" "fs" "mkdir" "${DIR}/$1"
         D="${D}/$1"
     fi
-
-    ${ALLUXIO_BIN}" "fs" "write" "${D}/f_${F}_${1} &> 
+    "${ALLUXIO_BIN}" "fs" "write" "${D}/f_${F}_${1}" 4096 "${U2}" &>> "${TIMING}" 
 }
 
 for ((i = 0; i < ${U1}; i++)); do
