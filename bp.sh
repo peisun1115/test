@@ -16,6 +16,13 @@
 # -t: Create a new directory for each U2.
 
 ACTION=$1
+if [[ ${ACTION} = "SETUP" ]]; then
+    sudo mkdir -p "/mnt/ramdisk"
+    sudo mount -t ramfs -o size=$((1024*1024*1024*4)) ramfs "/mnt/ramdisk"
+    sudo chmod a+w "/mnt/ramdisk"
+    exit 0
+fi
+
 DIR=$2
 U1=$3
 U2=$4
@@ -37,7 +44,7 @@ _local_write() {
     fi
 
     for ((j = 0; j < ${U2}; j++)); do
-        cp ./golden ${D}/f_${F}_${1}_${j}
+        echo 'a' >  ${D}/f_${F}_${1}_${j}
     done
 }
 
@@ -52,7 +59,6 @@ _alluxio_write() {
         "${ALLUXIO_BIN}" "fs" "copyFromLocal" "./golden" "${D}/f_${F}_${1}_${j}" &> /dev/null
     done
 }
-
 
 for ((i = 0; i < ${U1}; i++)); do
     case ${ACTION} in
