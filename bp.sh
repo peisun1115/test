@@ -27,8 +27,9 @@ DIR=$2
 U1=$3
 U2=$4
 OUTPUT=$5
-F=$6
-T=$7
+TIMING=$6
+F=$7
+T=$8
 
 >"${OUTPUT}"
 
@@ -55,9 +56,7 @@ _alluxio_write() {
         D="${D}/$1"
     fi
 
-    for ((j = 0; j < ${U2}; j++)); do
-        "${ALLUXIO_BIN}" "fs" "copyFromLocal" "./golden" "${D}/f_${F}_${1}_${j}" &> /dev/null
-    done
+    ${ALLUXIO_BIN}" "fs" "write" "${D}/f_${F}_${1} &> 
 }
 
 for ((i = 0; i < ${U1}; i++)); do
