@@ -44,7 +44,10 @@ _local_write() {
     fi
 
     for ((j = 0; j < ${U2}; j++)); do
-        echo 'a' >  ${D}/f_${F}_${1}_${j}
+       >  ${D}/f_${F}_${1}_${j}
+       for k in {1..1024}; do
+	echo 'a' >> ${D}/f_${F}_${1}_${j}
+       done
     done
 }
 
