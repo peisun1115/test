@@ -49,11 +49,39 @@ _set_size() {
     export ALLUXIO_FILE_SIZE=$1
 }
 
+_build() {
+    mvn -Pdeveloper -T 2C clean install -Dmaven.javadoc.skip=true \
+        -DskipTests -Dlicense.skip=true -Dcheckstyle.skip=true \
+        -Dfindbugs.skip=true
+ 
+}
+
+_set_block_size() {
+    local PWD=$( pwd )
+    cd "${A}/core/common/src/main/resources"
+    cp "alluxio-default.properties" "alluxio-default.properties.backup"
+    cat "alluxio-default.properties" | \
+        sed "s/alluxio.user.block.size.bytes.default=512MB/alluxio.user.block.size.bytes.default=${1}" > \
+        /tmp/s
+    cp /tmp/s "alluxio-default.properties"
+    cd "${A}"
+    _build
+    cd ${PWD}
+}
+
+_reset_block_size() {
+    PWD = $( pwd )
+    cd "${A}/core/common/src/main/resources"
+    mv "alluxio-default.properties.backup" "alluxio-default.properties"
+    _build
+    cd ${PWD}
+}
+
 # 1: batches
 # 2: batch size
 # 3: file size
 _sub_exp() {
-    _write_msg "\nwrite $1*$2 files (size=$(($3/1024))KB)\n"
+    _write_msg "\n\nwrite $1*$2 files (size=$(($3/1024))KB)\n\n"
     _set_size $3
     ${BIN} ALLUXIO "Alluxio:" $1 $2 ${OC} ${OJ} ${FILE_PREFIX}
     _inc
