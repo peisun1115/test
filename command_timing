@@ -1,0 +1,31 @@
+############# EXP1: Test Large File ############
+    Write 4*1000 files in Java, each one has size 4K.
+    Write a file with size = 40M in Java.
+    Write 4*1000 files in Java.
+    Write a file with size = 1G in Java.
+    Write 4*1000 files in Java.
+################################
+
+write 4*1000 files (size=4KB)
+10.015 3.412 0.316
+5.090 2.876 0.272
+4.880 2.944 0.268
+4.649 2.612 0.320
+
+write 1*1 files (size=40960KB)
+0.899 1.252 0.104
+
+write 4*1000 files (size=4KB)
+4.572 2.688 0.340
+4.574 2.752 0.324
+4.536 2.976 0.296
+4.483 2.924 0.240
+
+write 1*1 files (size=1048576KB)
+2.127 1.768 0.924
+
+write 4*1000 files (size=4KB)
+4.430 2.748 0.260
+4.623 2.720 0.316
+4.632 2.824 0.376
+4.375 2.736 0.284
