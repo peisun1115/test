@@ -27,12 +27,16 @@ DIR=$2
 U1=$3
 U2=$4
 OUTPUT=$5
-TIMING=$6
-F=$7
-T=$8
+F=$6
+T=$7
+
+TIMING="${OUTPUT}_timing_${F}"
+OUTPUT="${OUTPUT}_${F}"
 
 >"${OUTPUT}"
->"${TIMING}"
+if [[ ${ACTION} = "ALLUXIO" ]]; then
+    >"${TIMING}"
+fi
 
 export TIMEFORMAT='%3R %3U %3S'
 export ALLUXIO_BIN="/home/ec2-user/workspace/alluxio/bin/alluxio"
