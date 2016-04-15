@@ -2800,3 +2800,83 @@ write 1*1 files (size=1048576KB)
     Reset block size to the default (512M) 
 ########################################
 
+
+
+write 8*1000 files (size=4KB)
+
+
+8.687251
+4.213532
+3.956648
+3.893152
+3.827030
+3.638717
+3.638942
+3.592698
+
+
+write 1*1 files (size=1048576KB)
+
+
+Failed to cache: Failed to connect to the worker
+
+
+write 4*1000 files (size=4096KB)
+
+
+
+
+write 1*1 files (size=1048576KB)
+
+
+
+
+write 4*1000 files (size=4096KB)
+
+
+
+
+write 1*1 files (size=1048576KB)
+
+
+
+
+write 4*1000 files (size=4096KB)
+
+
+
+
+write 1*1 files (size=1048576KB)
+
+
+
+
+write 4*1000 files (size=4096KB)
+
+
+
+
+write 1*1 files (size=1048576KB)
+
+
+
+
+write 4*1000 files (size=4096KB)
+
+
+
+
+write 1*1 files (size=1048576KB)
+
+
+
+
+########### EXP3 Test Large number of blocks. #############
+    Set block size to be 4K.
+    Write 8*1000 files in Java (to warm up Alluxio), each one has size 4K.
+    Repeat the following 20 times.
+      Write 1 file with size=100M (=> 64M/4K=16K blocks).
+      Write 4*1000 files, size = 4K
+    Reset block size to the default (512M) 
+########################################
+

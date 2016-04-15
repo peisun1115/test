@@ -118,7 +118,7 @@ exp1() {
 exp2() {
     # Experiment 2.
     MSG="/n/n########### EXP2 Test Large number of small files.  ############
-    Write 20 * 10K files in Java, each one has size of 4K.\n###############################\n"
+    Write 20 * 10K files in Java, each one has size of 4K (200K blocks in total).\n###############################\n"
     _write_msg "${MSG}"
     _dump_machine_info
     _restart_alluxio
@@ -131,8 +131,8 @@ exp3() {
     MSG="\n\n########### EXP3 Test Large number of blocks. #############
     Set block size to be 4K.
     Write 8*1000 files in Java (to warm up Alluxio), each one has size 4K.
-    Repeat the following 10 times.
-      Write 1 file with size=1G (=> 1G/4K=256K blocks).
+    Repeat the following 20 times.
+      Write 1 file with size=100M (=> 64M/4K=16K blocks).
       Write 4*1000 files, size = 4K
     Reset block size to the default (512M) \n########################################\n"
     _write_msg "${MSG}"
@@ -143,9 +143,9 @@ exp3() {
     # warm up.
     _sub_exp 8 1000 4096
 
-    for i in {1..10}; do
-        _sub_exp 1 1 $((1024*1024*1024))
-        _sub_exp 4 1000 $((4*1024*1024))
+    for i in {1..20}; do
+        _sub_exp 1 1 $((64*1024*1024))
+        _sub_exp 4 1000 $((4*1024))
     done
 
     _reset_block_size
