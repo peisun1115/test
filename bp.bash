@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Usage: bp.sh ACTION DIR U1 U2 OUTPUT [-t]
+# Usage: bp.sh ACTION DIR U1 U2 COMMAND_TIMING JAVA_TIMING [-t]
 # ACTION: ALLUXIO -> Use alluxio shell.
 # ACTION: LOCAL -> Write locally. 
 # 
@@ -9,7 +9,8 @@
 # U1: the outter limit.
 # U2: the inner limit.
 #
-# OUTPUT: the output filename
+# COMMAND_TIMING: the output filename that contains timing information from commandline (time).
+# JAVA_TIMING: the output filename that contains timing information from Java.
 #
 # F: File prefix.
 #
@@ -26,20 +27,17 @@ fi
 DIR=$2
 U1=$3
 U2=$4
-OUTPUT=$5
-F=$6
-T=$7
 
-TIMING="${OUTPUT}_timing_${F}"
-OUTPUT="${OUTPUT}_${F}"
+COMMAND_TIMING=$5
+JAVA_TIMING=$6
 
->"${OUTPUT}"
-if [[ ${ACTION} = "ALLUXIO" ]]; then
-    >"${TIMING}"
-fi
+F=$7
+T=$8
 
 export TIMEFORMAT='%3R %3U %3S'
 export ALLUXIO_BIN="/home/ec2-user/workspace/alluxio/bin/alluxio"
+
+ALLUXIO_FILE_SIZE=${ALLUXIO_FILE_SIZE:-4096}
 
 # $1: i
 _local_write() {
@@ -60,16 +58,16 @@ _alluxio_write() {
         "${ALLUXIO_BIN}" "fs" "mkdir" "${DIR}/$1"
         D="${D}/$1"
     fi
-    ${ALLUXIO_BIN} "fs" "write" "${D}/f_${F}_${1}" 4096 "${U2}" &>> "${TIMING}" 
+    ${ALLUXIO_BIN} "fs" "write" "${D}/f_${F}_${1}" "${ALLUXIO_FILE_SIZE}" "${U2}" &>> "${JAVA_TIMING}" 
 }
 
 for ((i = 0; i < ${U1}; i++)); do
     case ${ACTION} in
         "ALLUXIO")
-            time ( _alluxio_write $i ) &>> ${OUTPUT}
+            time ( _alluxio_write $i ) &>> ${COMMAND_TIMING}
             ;;
         "LOCAL")
-            time ( _local_write $i ) &>> ${OUTPUT}
+            time ( _local_write $i ) &>> ${COMMAND_TIMING}
             ;;
         *)
             echo "Unsupported action."
