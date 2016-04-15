@@ -58,7 +58,8 @@ _set_block_size() {
     cd "${A}/core/common/src/main/resources"
     cp "alluxio-default.properties" "alluxio-default.properties.backup"
     cat "alluxio-default.properties.backup" | \
-        sed "s/alluxio.user.block.size.bytes.default=512MB/alluxio.user.block.size.bytes.default=${1}/" > \
+        sed "s/alluxio.user.block.size.bytes.default=512MB/alluxio.user.block.size.bytes.default=${1}/" |
+        sed "s/alluxio.user.file.buffer.bytes=1MB/alluxio.user.file.buffer.bytes=${1}/"> \
         "alluxio-default.properties"
     cd "${A}"
     _build
@@ -136,8 +137,8 @@ exp3() {
     Reset block size to the default (512M) \n########################################\n"
     _write_msg "${MSG}"
     _dump_machine_info
-    _restart_alluxio
     _set_block_size 4096
+    _restart_alluxio
 
     # warm up.
     _sub_exp 8 1000 4096

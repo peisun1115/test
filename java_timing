@@ -2729,3 +2729,74 @@ write 1*1 files (size=1048576KB)
 write 4*1000 files (size=4096KB)
 
 
+
+
+########### EXP3 Test Large number of blocks. #############
+    Set block size to be 4K.
+    Write 8*1000 files in Java (to warm up Alluxio), each one has size 4K.
+    Repeat the following 10 times.
+      Write 1 file with size=1G (=> 1G/4K=256K blocks).
+      Write 4*1000 files, size = 4K
+    Reset block size to the default (512M) 
+########################################
+
+
+
+write 8*1000 files (size=4KB)
+
+
+4.774510
+4.235776
+3.932451
+3.840067
+3.767092
+3.761050
+3.631219
+3.575164
+
+
+write 1*1 files (size=1048576KB)
+
+
+Failed to cache: Failed to connect to the worker
+
+
+write 4*1000 files (size=4096KB)
+
+
+
+
+write 1*1 files (size=1048576KB)
+
+
+
+
+write 4*1000 files (size=4096KB)
+
+
+
+
+write 1*1 files (size=1048576KB)
+
+
+
+
+write 4*1000 files (size=4096KB)
+
+
+
+
+write 1*1 files (size=1048576KB)
+
+
+
+
+########### EXP3 Test Large number of blocks. #############
+    Set block size to be 4K.
+    Write 8*1000 files in Java (to warm up Alluxio), each one has size 4K.
+    Repeat the following 10 times.
+      Write 1 file with size=1G (=> 1G/4K=256K blocks).
+      Write 4*1000 files, size = 4K
+    Reset block size to the default (512M) 
+########################################
+
