@@ -120,7 +120,7 @@ main() {
     _dump_machine_info
     _restart_alluxio
 
-    _sub_exp 20 100000 $((4*1024))
+    _sub_exp 20 10000 $((4*1024))
 
     # Experiment 3.
     MSG="\n\n########### EXP3 Test Large number of blocks. #############
