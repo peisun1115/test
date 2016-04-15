@@ -79,7 +79,7 @@ _reset_block_size() {
 # 2: batch size
 # 3: file size
 _sub_exp() {
-    _write_msg "\n\nwrite $1*$2 files (size=$(($3/1024))KB)\n\n"
+    _write_msg "\n\nwrite $1*$2 files (size=$(($3/1024))KB)\n"
     _set_size $3
     ${BIN} ALLUXIO "Alluxio:" $1 $2 ${OC} ${OJ} ${FILE_PREFIX}
     _inc
@@ -131,8 +131,8 @@ exp3() {
     MSG="\n\n########### EXP3 Test Large number of blocks. #############
     Set block size to be 4K.
     Write 8*1000 files in Java (to warm up Alluxio), each one has size 4K.
-    Repeat the following 20 times.
-      Write 1 file with size=100M (=> 64M/4K=16K blocks).
+    Repeat the following 10 times.
+      Write 16*1 file with size=4M (=> 16*4M/4K=16K blocks).
       Write 4*1000 files, size = 4K
     Reset block size to the default (512M) \n########################################\n"
     _write_msg "${MSG}"
@@ -143,8 +143,8 @@ exp3() {
     # warm up.
     _sub_exp 8 1000 4096
 
-    for i in {1..20}; do
-        _sub_exp 1 1 $((64*1024*1024))
+    for i in {1..10}; do
+        _sub_exp 16 1 $((4*1024*1024))
         _sub_exp 4 1000 $((4*1024))
     done
 

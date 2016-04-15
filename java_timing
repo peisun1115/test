@@ -2880,3 +2880,247 @@ write 1*1 files (size=1048576KB)
     Reset block size to the default (512M) 
 ########################################
 
+
+
+write 8*1000 files (size=4KB)
+
+
+9.326902
+4.221837
+4.019852
+3.856090
+3.776490
+3.702975
+3.610170
+3.594522
+
+
+write 1*1 files (size=65536KB)
+
+
+Failed to cache: Failed to connect to the worker
+
+
+write 4*1000 files (size=4KB)
+
+
+3.866489
+3.892772
+4.125295
+3.758468
+
+
+write 1*1 files (size=65536KB)
+
+
+Failed to cache: Failed to connect to the worker
+
+
+write 4*1000 files (size=4KB)
+
+
+3.757556
+3.667197
+3.683130
+3.689262
+
+
+write 1*1 files (size=65536KB)
+
+
+Failed to cache: Failed to connect to the worker
+
+
+write 4*1000 files (size=4KB)
+
+
+3.745140
+
+
+write 1*1 files (size=65536KB)
+
+
+
+
+write 4*1000 files (size=4KB)
+
+
+
+
+write 1*1 files (size=65536KB)
+
+
+
+
+write 4*1000 files (size=4KB)
+
+
+
+
+########### EXP3 Test Large number of blocks. #############
+    Set block size to be 4K.
+    Write 8*1000 files in Java (to warm up Alluxio), each one has size 4K.
+    Repeat the following 10 times.
+      Write 1*16 file with size=4M (=> 16*4M/4K=16K blocks).
+      Write 4*1000 files, size = 4K
+    Reset block size to the default (512M) 
+########################################
+
+
+
+write 8*1000 files (size=4KB)
+
+
+8.867742
+4.354861
+4.161278
+4.048950
+3.794595
+3.814569
+3.639037
+3.592569
+
+
+write 1*16 files (size=4096KB)
+
+
+120.547692
+
+
+write 4*1000 files (size=4KB)
+
+
+3.930677
+3.836376
+3.817031
+3.848217
+
+
+write 1*16 files (size=4096KB)
+
+
+128.427023
+
+
+write 4*1000 files (size=4KB)
+
+
+4.391110
+4.452845
+4.469876
+4.325320
+
+
+write 1*16 files (size=4096KB)
+
+
+133.344546
+
+
+write 4*1000 files (size=4KB)
+
+
+4.444397
+4.654026
+4.448616
+4.467304
+
+
+write 1*16 files (size=4096KB)
+
+
+141.777967
+
+
+write 4*1000 files (size=4KB)
+
+
+5.736066
+5.311007
+5.600290
+6.088822
+
+
+write 1*16 files (size=4096KB)
+
+
+147.702473
+
+
+write 4*1000 files (size=4KB)
+
+
+7.096522
+5.617289
+5.808937
+5.685454
+
+
+write 1*16 files (size=4096KB)
+
+
+156.986762
+
+
+write 4*1000 files (size=4KB)
+
+
+7.401616
+6.920205
+7.111830
+6.420660
+
+
+write 1*16 files (size=4096KB)
+
+
+159.477650
+
+
+write 4*1000 files (size=4KB)
+
+
+7.005626
+7.503527
+8.150508
+8.776729
+
+
+write 1*16 files (size=4096KB)
+
+
+180.227697
+
+
+write 4*1000 files (size=4KB)
+
+
+9.832102
+8.726835
+8.367438
+7.951153
+
+
+write 1*16 files (size=4096KB)
+
+
+194.049581
+
+
+write 4*1000 files (size=4KB)
+
+
+8.853917
+9.154180
+8.991371
+9.211618
+
+
+write 1*16 files (size=4096KB)
+
+
+
+
+write 4*1000 files (size=4KB)
+
+
