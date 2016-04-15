@@ -97,7 +97,7 @@ main() {
     _dump_machine_info
   
     # Experiment 1. 
-    MSG="############# EXP1: Test Large File ############
+    MSG="/n/n############# EXP1: Test Large File ############
     Write 4*1000 files in Java, each one has size 4K.
     Write a file with size = 40M in Java.
     Write 4*1000 files in Java.
@@ -114,7 +114,7 @@ main() {
     _sub_exp 4 1000 $((4*1024))
     
     # Experiment 2.
-    MSG="########### EXP2 Test Large number of small files.  ############
+    MSG="/n/n########### EXP2 Test Large number of small files.  ############
     Write 20 * 10K files in Java, each one has size of 4K.\n###############################"
     _write_msg "${MSG}"
     _dump_machine_info
@@ -123,7 +123,7 @@ main() {
     _sub_exp 20 100000 $((4*1024))
 
     # Experiment 3.
-    MSG="########### EXP3 Test Large number of blocks. #############
+    MSG="\n\n########### EXP3 Test Large number of blocks. #############
     Set block size to be 4K.
     Write 8*1000 files in Java (to warm up Alluxio), each one has size 4K.
     Repeat the following 10 times.
