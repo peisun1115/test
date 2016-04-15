@@ -3,10 +3,7 @@
 # Alluxio dir.
 A="${HOME}/workspace/alluxio"
 # Output dir. O/java_timing, O/command_timging, O/machine_info. 
-O=$1
-if [[ -z $O ]]; then
-    O="."
-fi
+O="."
 
 OJ="${O}/java_timing"
 OC="${O}/command_timing"
@@ -22,9 +19,9 @@ _touch_files() {
 
 # Write $1 to all the output files as a separator.
 _write_msg() {
-    echo -ne "$1" >> ${OM}
-    echo -ne "$1" >> ${OC}
-    echo -ne "$1" >> ${OJ}
+    echo -e "$1" >> ${OM}
+    echo -e "$1" >> ${OC}
+    echo -e "$1" >> ${OJ}
 }
 
 # $1: message to be written before dumping.
@@ -57,24 +54,24 @@ _build() {
 }
 
 _set_block_size() {
-    local PWD=$( pwd )
+    local CURRENT_D=$( pwd )
     cd "${A}/core/common/src/main/resources"
     cp "alluxio-default.properties" "alluxio-default.properties.backup"
-    cat "alluxio-default.properties" | \
-        sed "s/alluxio.user.block.size.bytes.default=512MB/alluxio.user.block.size.bytes.default=${1}" > \
-        /tmp/s
-    cp /tmp/s "alluxio-default.properties"
+    cat "alluxio-default.properties.backup" | \
+        sed "s/alluxio.user.block.size.bytes.default=512MB/alluxio.user.block.size.bytes.default=${1}/" > \
+        "alluxio-default.properties"
     cd "${A}"
     _build
-    cd ${PWD}
+    cd ${CURRENT_D}
 }
 
 _reset_block_size() {
-    PWD = $( pwd )
+    local CURRENT_D=$( pwd )
     cd "${A}/core/common/src/main/resources"
     mv "alluxio-default.properties.backup" "alluxio-default.properties"
+    cd ${A}
     _build
-    cd ${PWD}
+    cd ${CURRENT_D}
 }
 
 # 1: batches
@@ -87,15 +84,18 @@ _sub_exp() {
     _inc
     _dump_machine_info
 }
-main() {
-    FILE_PREFIX=0
 
+
+reset() {
+    FILE_PREFIX=0
     _touch_files
-  
+    
     # Start.  Dump machine information to prepare all experiments.
     echo -e "#############STARTING POINT#############" >> ${OM}
     _dump_machine_info
-  
+}
+
+exp1() {
     # Experiment 1. 
     MSG="/n/n############# EXP1: Test Large File ############
     Write 4*1000 files in Java, each one has size 4K.
@@ -112,24 +112,28 @@ main() {
     _sub_exp 4 1000 $((4*1024))
     _sub_exp 1 1 $((1*1024*1024*1024))
     _sub_exp 4 1000 $((4*1024))
-    
+}
+
+exp2() {
     # Experiment 2.
     MSG="/n/n########### EXP2 Test Large number of small files.  ############
-    Write 20 * 10K files in Java, each one has size of 4K.\n###############################"
+    Write 20 * 10K files in Java, each one has size of 4K.\n###############################\n"
     _write_msg "${MSG}"
     _dump_machine_info
     _restart_alluxio
 
     _sub_exp 20 10000 $((4*1024))
+}
 
-    # Experiment 3.
+exp3() {
+ # Experiment 3.
     MSG="\n\n########### EXP3 Test Large number of blocks. #############
     Set block size to be 4K.
     Write 8*1000 files in Java (to warm up Alluxio), each one has size 4K.
     Repeat the following 10 times.
       Write 1 file with size=1G (=> 1G/4K=256K blocks).
       Write 4*1000 files, size = 4K
-    Reset block size to the default (512M) \n########################################"
+    Reset block size to the default (512M) \n########################################\n"
     _write_msg "${MSG}"
     _dump_machine_info
     _restart_alluxio
@@ -143,7 +147,30 @@ main() {
         _sub_exp 4 1000 $((4*1024*1024))
     done
 
-    reset_block_size
+    _reset_block_size
 }
 
+main() {
+    case $1 in
+        0)
+            reset
+            ;;
+        1)
+            exp1
+            ;;
+        2)
+            exp2
+            ;;
+        3)
+            exp3
+            ;;
+        *)
+            reset
+            exp1
+            exp2
+            exp3
+            ;;
+    esac
+}
+   
 main "$@"
