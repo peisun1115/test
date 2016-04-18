@@ -26,8 +26,9 @@ _write_msg() {
 
 # $1: message to be written before dumping.
 _dump_machine_info() {
-    cat /proc/meminfo >> "${OM}"
-    echo >> "${OM}"
+  #  cat /proc/meminfo >> "${OM}"
+ # echo >> "${OM}"
+ true
 }
 
 _restart_alluxio() {
@@ -118,12 +119,12 @@ exp1() {
 exp2() {
     # Experiment 2.
     MSG="/n/n########### EXP2 Test Large number of small files.  ############
-    Write 20 * 10K files in Java, each one has size of 4K (200K blocks in total).\n###############################\n"
+    Write 10 * 10K files in Java, each one has size of 4K (100K blocks in total).\n###############################\n"
     _write_msg "${MSG}"
     _dump_machine_info
     _restart_alluxio
 
-    _sub_exp 20 10000 $((4*1024))
+    _sub_exp 10 10000 $((4*1024))
 }
 
 exp3() {
