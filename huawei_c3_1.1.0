@@ -1,0 +1,108 @@
+HW_30K_Write_512_1.1.0_C3	Thoughput unit:MB/s,Duration unit:ms\
+ full report:Throughput:1 (MB/s)\
+Duration:1 (ms)\
+HUAWEI 733251454781********** Task Configurations **********\
+HuaweiConfig{operation=SYNC_WRITE, depth=3, width=10, count=10, size=512, cleanUp=false}********** Statistics **********\
+Runtime(seconds)@2@ip-172-31-8-239.us-west-2.compute.internal\
+1009.484418845\
+Runtime(seconds)@1@ip-172-31-4-36.us-west-2.compute.internal\
+976.143219593\
+Runtime(seconds)@3@ip-172-31-1-23.us-west-2.compute.internal\
+945.193214671\
+
+HW_30K_Read_512_1.1.0_C3	Thoughput unit:MB/s,Duration unit:ms\
+ full report:Throughput:1 (MB/s)\
+Duration:1 (ms)\
+HUAWEI 1744616847303********** Task Configurations **********\
+HuaweiConfig{operation=READ, depth=3, width=10, count=10, size=512, cleanUp=false}********** Statistics **********\
+Runtime(seconds)@3@ip-172-31-1-23.us-west-2.compute.internal\
+20.482593548\
+Runtime(seconds)@1@ip-172-31-4-36.us-west-2.compute.internal\
+23.25451311\
+Runtime(seconds)@2@ip-172-31-8-239.us-west-2.compute.internal\
+23.255736157\
+
+HW_30K_Delete_512_1.1.0_C3	Thoughput unit:MB/s,Duration unit:ms\
+ full report:Throughput:1 (MB/s)\
+Duration:1 (ms)\
+HUAWEI 1770633388345********** Task Configurations **********\
+HuaweiConfig{operation=DELETE, depth=3, width=10, count=10, size=512, cleanUp=true}********** Statistics **********\
+Runtime(seconds)@2@ip-172-31-8-239.us-west-2.compute.internal\
+48.613327236\
+Runtime(seconds)@3@ip-172-31-1-23.us-west-2.compute.internal\
+35.039062088\
+Runtime(seconds)@1@ip-172-31-4-36.us-west-2.compute.internal\
+35.749521627\
+
+HW_30K_Write_64_1.1.0_C3	Thoughput unit:MB/s,Duration unit:ms\
+ full report:Throughput:1 (MB/s)\
+Duration:1 (ms)\
+HUAWEI 1822665185120********** Task Configurations **********\
+HuaweiConfig{operation=SYNC_WRITE, depth=3, width=10, count=10, size=64, cleanUp=false}********** Statistics **********\
+Runtime(seconds)@1@ip-172-31-4-36.us-west-2.compute.internal\
+456.453835867\
+Runtime(seconds)@2@ip-172-31-8-239.us-west-2.compute.internal\
+464.523204209\
+Runtime(seconds)@3@ip-172-31-1-23.us-west-2.compute.internal\
+424.456636314\
+
+HW_30K_Read_64_1.1.0_C3	Thoughput unit:MB/s,Duration unit:ms\
+ full report:Throughput:1 (MB/s)\
+Duration:1 (ms)\
+HUAWEI 2288946359229********** Task Configurations **********\
+HuaweiConfig{operation=READ, depth=3, width=10, count=10, size=64, cleanUp=false}********** Statistics **********\
+Runtime(seconds)@3@ip-172-31-1-23.us-west-2.compute.internal\
+16.820143294\
+Runtime(seconds)@1@ip-172-31-4-36.us-west-2.compute.internal\
+20.918948233\
+Runtime(seconds)@2@ip-172-31-8-239.us-west-2.compute.internal\
+18.380563281\
+
+HW_30K_Delete_64_1.1.0_C3	Thoughput unit:MB/s,Duration unit:ms\
+ full report:Throughput:1 (MB/s)\
+Duration:1 (ms)\
+HUAWEI 2311961565876********** Task Configurations **********\
+HuaweiConfig{operation=DELETE, depth=3, width=10, count=10, size=64, cleanUp=true}********** Statistics **********\
+Runtime(seconds)@2@ip-172-31-8-239.us-west-2.compute.internal\
+33.472963405\
+Runtime(seconds)@3@ip-172-31-1-23.us-west-2.compute.internal\
+33.593132562\
+Runtime(seconds)@1@ip-172-31-4-36.us-west-2.compute.internal\
+33.545084637\
+
+HW_30K_Write_8_1.1.0_C3	Thoughput unit:MB/s,Duration unit:ms\
+ full report:Throughput:1 (MB/s)\
+Duration:1 (ms)\
+HUAWEI 2351983405311********** Task Configurations **********\
+HuaweiConfig{operation=SYNC_WRITE, depth=3, width=10, count=10, size=8, cleanUp=false}********** Statistics **********\
+Runtime(seconds)@1@ip-172-31-4-36.us-west-2.compute.internal\
+316.015674726\
+Runtime(seconds)@2@ip-172-31-8-239.us-west-2.compute.internal\
+319.786315582\
+Runtime(seconds)@3@ip-172-31-1-23.us-west-2.compute.internal\
+296.659879297\
+
+HW_30K_Read_8_1.1.0_C3	Thoughput unit:MB/s,Duration unit:ms\
+ full report:Throughput:1 (MB/s)\
+Duration:1 (ms)\
+HUAWEI 2674176494483********** Task Configurations **********\
+HuaweiConfig{operation=READ, depth=3, width=10, count=10, size=8, cleanUp=false}********** Statistics **********\
+Runtime(seconds)@3@ip-172-31-1-23.us-west-2.compute.internal\
+17.110747566\
+Runtime(seconds)@1@ip-172-31-4-36.us-west-2.compute.internal\
+20.185181215\
+Runtime(seconds)@2@ip-172-31-8-239.us-west-2.compute.internal\
+18.667538276\
+
+HW_30K_Delete_8_1.1.0_C3	Thoughput unit:MB/s,Duration unit:ms\
+ full report:Throughput:1 (MB/s)\
+Duration:1 (ms)\
+HUAWEI 2697191931731********** Task Configurations **********\
+HuaweiConfig{operation=DELETE, depth=3, width=10, count=10, size=8, cleanUp=true}********** Statistics **********\
+Runtime(seconds)@1@ip-172-31-4-36.us-west-2.compute.internal\
+31.458687299\
+Runtime(seconds)@2@ip-172-31-8-239.us-west-2.compute.internal\
+31.57602476\
+Runtime(seconds)@3@ip-172-31-1-23.us-west-2.compute.internal\
+31.345292935\
+
