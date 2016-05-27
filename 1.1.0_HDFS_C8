@@ -1,4 +1,4 @@
-CREATE_FILE_MUST_CACHE_1.1.0_C32	Thoughput unit:MB/s,Duration unit:ms\
+HDFS_CREATE_FILE_MUST_CACHE_1.1.0_C32	Thoughput unit:MB/s,Duration unit:ms\
  full report:Throughput:1 (MB/s)\
 Duration:1 (ms)\
 FSMeta 674480264143\
@@ -293,7 +293,7 @@ Time series starts at 673000000000 with width 1000000000.\
 187 486\
 188 182\
 
-LIST_STATUS_MUST_CACHE_1.1.0_C32	Thoughput unit:MB/s,Duration unit:ms\
+HDFS_LIST_STATUS_MUST_CACHE_1.1.0_C32	Thoughput unit:MB/s,Duration unit:ms\
  full report:Throughput:1 (MB/s)\
 Duration:1 (ms)\
 FSMeta 860331657486\
@@ -432,7 +432,7 @@ Time series starts at 857000000000 with width 1000000000.\
 26 7259\
 27 2018\
 
-LIST_STATUS_Dir_MUST_CACHE_1.1.0_C32	Thoughput unit:MB/s,Duration unit:ms\
+HDFS_LIST_STATUS_Dir_MUST_CACHE_1.1.0_C32	Thoughput unit:MB/s,Duration unit:ms\
  full report:Throughput:1 (MB/s)\
 Duration:1 (ms)\
 FSMeta 885348385157\
@@ -572,7 +572,7 @@ Time series starts at 882000000000 with width 1000000000.\
 27 8470\
 28 2685\
 
-DELETE_MUST_CACHE_1.1.0_C32	Thoughput unit:MB/s,Duration unit:ms\
+HDFS_DELETE_MUST_CACHE_1.1.0_C32	Thoughput unit:MB/s,Duration unit:ms\
  full report:Throughput:1 (MB/s)\
 Duration:1 (ms)\
 FSMeta 911366752400\
@@ -773,7 +773,7 @@ Time series starts at 909000000000 with width 1000000000.\
 88 1043\
 89 137\
 
-CREATE_FILE_CACHE_THROUGH_1.1.0_C32	Thoughput unit:MB/s,Duration unit:ms\
+HDFS_CREATE_FILE_CACHE_THROUGH_1.1.0_C32	Thoughput unit:MB/s,Duration unit:ms\
  full report:Throughput:1 (MB/s)\
 Duration:1 (ms)\
 FSMeta 998413121051\
@@ -1093,7 +1093,7 @@ Time series starts at 996000000000 with width 1000000000.\
 207 546\
 208 270\
 
-LIST_STATUS_CACHE_THROUGH_1.1.0_C32	Thoughput unit:MB/s,Duration unit:ms\
+HDFS_LIST_STATUS_CACHE_THROUGH_1.1.0_C32	Thoughput unit:MB/s,Duration unit:ms\
  full report:Throughput:1 (MB/s)\
 Duration:1 (ms)\
 FSMeta 1204535818301\
@@ -1232,7 +1232,7 @@ Time series starts at 1201000000000 with width 1000000000.\
 26 2636\
 27 292\
 
-LIST_STATUS_Dir_CACHE_THROUGH_1.1.0_C32	Thoughput unit:MB/s,Duration unit:ms\
+HDFS_LIST_STATUS_Dir_CACHE_THROUGH_1.1.0_C32	Thoughput unit:MB/s,Duration unit:ms\
  full report:Throughput:1 (MB/s)\
 Duration:1 (ms)\
 FSMeta 1228550926560\
@@ -1372,7 +1372,7 @@ Time series starts at 1225000000000 with width 1000000000.\
 27 4143\
 28 83\
 
-DELETE_CACHE_THROUGH_1.1.0_C32	Thoughput unit:MB/s,Duration unit:ms\
+HDFS_DELETE_CACHE_THROUGH_1.1.0_C32	Thoughput unit:MB/s,Duration unit:ms\
  full report:Throughput:1 (MB/s)\
 Duration:1 (ms)\
 FSMeta 1254568355101\

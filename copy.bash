@@ -6,12 +6,12 @@ function copy {
 
   cp ~/workspace/test/${OP}_${WT}_1.0.1_C32_${TL} c32_1.0.1.dat
   cp ~/workspace/test/${OP}_${WT}_1.1.0_C32_${TL} c32_1.1.0.dat
-  cp ~/workspace/test/${OP}_${WT}_1.1.0_HDFS_C32_${TL} c32_hdfs.dat
+  cp ~/workspace/test/HDFS_${OP}_${WT}_1.1.0_C32_${TL} c32_hdfs.dat
+  cp ~/workspace/test/HDFS_${OP}_${WT}_1.1.0_C8_${TL} c8_hdfs.dat
   cp ~/workspace/test/${OP}_1.0.1_${WT}_RJ_C32_${TL} c32_rj_1.0.1.dat
   cp ~/workspace/test/${OP}_1.1.0_${WT}_RJ_C32_${TL} c32_rj_1.1.0.dat
   cp ~/workspace/test/${OP}_1.0.1_${WT}_C8_${TL} c8_1.0.1.dat
   cp ~/workspace/test/${OP}_1.1.0_${WT}_C8_${TL} c8_1.1.0.dat
-  cp ~/workspace/test/${OP}_1.1.0_HDFS_C8_${TL} c8_hdfs.dat
 }
 
 cd ${1}/create_file_CACHE_THROUGH
