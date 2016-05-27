@@ -3,15 +3,15 @@ function copy {
   OP=$1
   TL=$2
   CT=""
-  if [[ -z $2 ]]; then
+  if [[ ! -z $3 ]]; then
       CT="CT_"
   fi
   
   cp ~/workspace/test/${OP}_1.0.1_${CT}C32_${TL} c32_1.0.1.dat
   cp ~/workspace/test/${OP}_1.1.0_${CT}C32_${TL} c32_1.1.0.dat
   cp ~/workspace/test/${OP}_1.1.0_HDFS_C32_${TL} c32_hdfs.dat
-  cp ~/workspace/test/${OP}_1.0.1_RJ_C32_${TL} c32_rj_1.0.1.dat
-  cp ~/workspace/test/${OP}_1.1.0_RJ_C32_${TL} c32_rj_1.1.0.dat
+  cp ~/workspace/test/${OP}_1.0.1_${CT}RJ_C32_${TL} c32_rj_1.0.1.dat
+  cp ~/workspace/test/${OP}_1.1.0_${CT}RJ_C32_${TL} c32_rj_1.1.0.dat
   cp ~/workspace/test/${OP}_1.0.1_${CT}C8_${TL} c8_1.0.1.dat
   cp ~/workspace/test/${OP}_1.1.0_${CT}C8_${TL} c8_1.1.0.dat
   cp ~/workspace/test/${OP}_1.1.0_HDFS_C8_${TL} c8_hdfs.dat
