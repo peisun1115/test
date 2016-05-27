@@ -268,7 +268,7 @@ Time series starts at 415000000000 with width 1000000000.\
 15 6401\
 16 5565\
 
-LIST_STATUS_Dir_MUST_CACHE_1.0.1	Thoughput unit:MB/s,Duration unit:ms\
+LIST_STATUS_Dir_MUST_CACHE_1.0.1_C32	Thoughput unit:MB/s,Duration unit:ms\
  full report:Throughput:1 (MB/s)\
 Duration:1 (ms)\
 FSMeta 434681198194\
@@ -901,7 +901,7 @@ Time series starts at 818000000000 with width 1000000000.\
 16 4681\
 17 1194\
 
-CREATE_FILE_CACHE_THROUGH_1.0.1_	Thoughput unit:MB/s,Duration unit:ms\
+CREATE_FILE_CACHE_THROUGH_1.0.1_C32	Thoughput unit:MB/s,Duration unit:ms\
  full report:Throughput:1 (MB/s)\
 Duration:1 (ms)\
 FSMeta 837930695265\
@@ -1348,7 +1348,7 @@ Time series starts at 837000000000 with width 1000000000.\
 334 200\
 335 235\
 
-LIST_STATUS_CACHE_THROUGH_1.0.1_	Thoughput unit:MB/s,Duration unit:ms\
+LIST_STATUS_CACHE_THROUGH_1.0.1_C32	Thoughput unit:MB/s,Duration unit:ms\
  full report:Throughput:1 (MB/s)\
 Duration:1 (ms)\
 FSMeta 1174145500999\
@@ -1476,7 +1476,7 @@ Time series starts at 1168000000000 with width 1000000000.\
 15 8726\
 16 6371\
 
-LIST_STATUS_Dir_CACHE_THROUGH_1.	Thoughput unit:MB/s,Duration unit:ms\
+LIST_STATUS_Dir_CACHE_THROUGH_1.0.1_C32	Thoughput unit:MB/s,Duration unit:ms\
  full report:Throughput:1 (MB/s)\
 Duration:1 (ms)\
 FSMeta 1187159550322\
