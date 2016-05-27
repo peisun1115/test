@@ -28,12 +28,12 @@ make
 cd ../..
 
 cd ${1}/delete_file_CACHE_THROUGH
-copy DELETE_FILE ${1} CACHE_THROUGH
+copy DELETE ${1} CACHE_THROUGH
 make
 cd ../..
 
 cd ${1}/delete_file_MUST_CACHE
-copy DELETE_FILE ${1} MUST_CACHE
+copy DELETE ${1} MUST_CACHE
 make
 cd ../..
 
