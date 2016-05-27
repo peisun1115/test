@@ -1306,7 +1306,7 @@ Time series starts at 1135000000000 with width 1000000000.\
 27 4411\
 28 351\
 
-DeleteFile.1.0_CT_HDFS_C32	Thoughput unit:MB/s,Duration unit:ms\
+DeleteFile_1.1.0_CT_HDFS_C32	Thoughput unit:MB/s,Duration unit:ms\
  full report:Throughput:1 (MB/s)\
 Duration:1 (ms)\
 FSMeta 1162415007721\
