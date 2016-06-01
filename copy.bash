@@ -48,12 +48,22 @@ make
 cd ../..
 
 cd ${1}/list_status_CACHE_THROUGH
-copy LIST_STATUS_D ${1} CT 
+copy LIST_STATUS_D ${1} CT
 make
 cd ../..
 
 cd ${1}/list_status_MUST_CACHE
 copy LIST_STATUS_D ${1} MC 
+make
+cd ../..
+
+cd ${1}/get_status_missing_CACHE_THROUGH
+copy LIST_STATUS_E ${1} CT
+make
+cd ../..
+
+cd ${1}/get_status_missing_MUST_CACHE
+copy LIST_STATUS_E ${1} MC
 make
 cd ../..
 
