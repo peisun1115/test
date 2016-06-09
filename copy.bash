@@ -17,8 +17,14 @@ if [[ -z ${COPY_ONLY} ]]; then
 fi
   
 for i in $(cat ./alluxio/conf/workers); do
-	ssh $i 'rm -rf alluxio*'
+	ssh $i 'rm -rf alluxio*;' 
 	scp alluxio-bin.tar.gz $i:/home/ec2-user/
-	ssh $i 'tar xvfz alluxio-bin.tar.gz; mv alluxio-tar alluxio '
+	ssh $i 'tar xvfz alluxio-bin.tar.gz; mv alluxio-tar alluxio;'
 done
+/tmp/hadoop/bin/hdfs dfs -rm -R /alluxio_storage/*
+cd alluxio
+./bin/alluxio-stop.sh all
+./bin/alluxio format
+./bin/alluxio-start.sh all
+cd ..
 
