@@ -22,4 +22,5 @@ curl https://bintray.com/sbt/rpm/rpm | sudo tee /etc/yum.repos.d/bintray-sbt-rpm
 sudo yum -y install sbt
 git clone https://github.com/peisun1115/spark-sql-perf.git
 cd spark-sql-perf
+git checkout use2.0
 sbt assembly
