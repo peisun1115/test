@@ -1,7 +1,10 @@
-#/bin/bash
+#!/usr/bin/env bash
+
+VERSION=$1
 
 split_file() {
-    cat $1 | awk 'BEGIN{filename=""} /Thoughput unit:MB/ {filename=$1; system("> " filename); print filename} {print $0 >> filename} END{}' > /tmp/names
+    cat $1 | sed "s/FSMeta|command=\(.*\)|levelIgnored=\(.*\)|missingFile=\(.*\)|workers.*writeType=\(.*\)|.*/FSMetaTestName \1_\2_\3_\4_${VERSION}/g" | \
+     awk 'BEGIN{filename=""} /FSMetaTestName/ {filename=$2; system("> " filename); print filename} {print $0 >> filename} END{}' > /tmp/names
 }
 
 # 1: input
@@ -15,7 +18,7 @@ get_latency() {
 }
 
 split_file $1
-for i in $( cat /tmp/names ); do 
+for i in $( cat /tmp/names ); do
     get_latency $i
     get_throughput $i
     rm $i
