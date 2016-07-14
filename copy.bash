@@ -12,6 +12,9 @@ function copy {
 
   cp ~/workspace/test/${OP}_${WT}_1.1.1_rj_${TL} c32_rj_baseline.dat
   cp ~/workspace/test/${OP}_${WT}_1.2.0_rj_${TL} c32_rj_new.dat
+
+  cp ~/workspace/test/${OP}_${WT}_1.1.1_s3_${TL} c32_s3_baseline.dat
+  cp ~/workspace/test/${OP}_${WT}_1.2.0_s3_${TL} c32_s3_new.dat
 }
 
 cd ${1}/create_file_CACHE_THROUGH
